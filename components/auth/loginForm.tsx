@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -8,12 +9,15 @@ import {
 import Link from "next/link"
 import { AuthCard } from "@/components/auth/authCard"
 
+
+
 export function LoginForm() {
+
   return (
     <AuthCard>
 
       {/* LEFT — FORM */}
-      <form className="flex flex-col justify-center gap-6 p-6 md:p-10">
+      <form  className="flex flex-col justify-center gap-6 p-6 md:p-10">
         <div className="text-center space-y-2">
           <h1 className="text-2xl font-bold tracking-tight">
             Welcome back again
@@ -31,12 +35,13 @@ export function LoginForm() {
               type="email"
               placeholder="m@example.com"
               required
+              name="email"
             />
           </Field>
 
           <Field>
             <FieldLabel htmlFor="password">Password</FieldLabel>
-            <Input id="password" type="password" required />
+            <Input id="password" type="password" required name="password" />
           </Field>
 
           <Button type="submit" className="w-full">
@@ -46,7 +51,7 @@ export function LoginForm() {
 
         <p className="text-center text-sm text-muted-foreground">
           Already have an account?{" "}
-          <Link href="/signIn" className="underline underline-offset-4">
+          <Link href="/signUp" className="underline underline-offset-4">
             Login
           </Link>
         </p>
