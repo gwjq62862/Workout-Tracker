@@ -63,8 +63,8 @@ export function RegisterForm() {
               {state.fieldErrors.password[0]}
             </p>
           )}
-          <Button type="submit" className="w-full">
-            Create Account
+          <Button type="submit" className={`w-full ${isPending ?? "opacity-60"}`} disabled={isPending}>
+          { isPending ? "creating account...":"create account"}
           </Button>
         </FieldGroup>
 
