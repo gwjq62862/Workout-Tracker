@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import { AuthProvider } from "@/lib/provider/auth-provider";
 import { createClient } from "@/lib/supabase/server";
 import { ReactNode } from "react";
+export const dynamic = "force-dynamic";
 interface LayoutProps {
     children: ReactNode;
 }
@@ -24,7 +25,7 @@ export default async function HomeLayout({ children }: LayoutProps) {
                         {children}
                     </div>
                 </main>
-                {/* You can add a Footer here later */}
+               
             </div>
         </AuthProvider>
     );

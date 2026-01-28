@@ -4,7 +4,7 @@
 import { redirect } from 'next/navigation'
 
 import { createClient } from '@/lib/supabase/server'
-import { AuthUser } from '../zodSchema/auth'
+import { AuthUser } from '../zodSchema/authSchema'
 import { AuthState } from '../type/authType'
 
 export async function login(prevState:AuthState,formData: FormData):Promise<AuthState> {
