@@ -10,7 +10,7 @@ interface AuthContextType {
 
 interface AuthProviderProps {
   children: ReactNode;
-  initialUser: User | null; // 3. Use the User type here
+  initialUser: User | null; 
 }
 const AuthContext = createContext<AuthContextType>({ user: null });
 

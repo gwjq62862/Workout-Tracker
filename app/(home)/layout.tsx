@@ -10,7 +10,7 @@ export default async function HomeLayout({ children }: LayoutProps) {
       const supabase = await createClient(); 
     const { data: { user } } = await supabase.auth.getUser();
     
-    console.log("User data on server:", user);
+  
     return (
         <AuthProvider initialUser={user}>
 
