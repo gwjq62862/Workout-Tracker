@@ -20,13 +20,13 @@ export default function Hero() {
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto">
                             <Button size="lg" className="px-8 h-12 text-md" asChild>
-                                <Link href="https://app.yoursaas.com">
+                                <Link href="/dashboard">
                                     Start Your Transformation <ArrowRight className="ml-2 h-4 w-4" />
                                 </Link>
                             </Button>
                             <Button size="lg" variant="outline" className="px-8 h-12 text-md" asChild>
-                                <Link href="https://app.yoursaas.com">
-                                    <PlayCircle className="mr-2 h-4 w-4" /> Watch Demo
+                                <Link href="/about">
+                                    <PlayCircle className="mr-2 h-4 w-4" /> Learn More
                                 </Link>
                             </Button>
                         </div>

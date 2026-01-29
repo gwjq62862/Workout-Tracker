@@ -17,10 +17,11 @@ import { useRouter } from "next/navigation";
 
 
 const navLinks = [
-    { title: "Features", href: "#features" },
-    { title: "Workouts", href: "#workouts" },
-    { title: "Pricing", href: "#pricing" },
+ 
+  { title: "Home", href: "/" },
+  { title: "About", href: "/about" }, 
 ];
+
 
 export default function Navbar() {
     const { user } = useAuth();
