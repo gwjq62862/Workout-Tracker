@@ -3,9 +3,9 @@
 import { useActionState, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Plus, Trash, ArrowLeft, Save, Dumbbell, Weight as WeightIcon, Hash } from "lucide-react";
+import { Plus, Trash, ArrowLeft, Save, Dumbbell, Weight as WeightIcon } from "lucide-react";
 import { updateWorkoutAction } from "@/lib/action/workout";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -26,9 +26,11 @@ interface EditWorkoutProps {
 export default function EditWorkoutForm({ workout }: EditWorkoutProps) {
     const router = useRouter();
     const [title, setTitle] = useState(workout.title);
-    const [date, setDate] = useState(
-        workout.workout_date?.split(" ")[0] ?? ""
-    );
+    const [date, setDate] = useState(() => {
+        if (!workout.workout_date) return "";
+        return new Date(workout.workout_date).toISOString().slice(0, 10);
+    });
+
 
     const [exercises, setExercises] = useState<Exercise[]>(workout.exercises);
 

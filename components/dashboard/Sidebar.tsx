@@ -1,9 +1,9 @@
-"use client" 
+"use client"
 
-import { 
-  Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, 
+import {
+  Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent,
   SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem,
-  SidebarHeader 
+  SidebarHeader
 } from "@/components/ui/sidebar"
 import { LayoutDashboard, Dumbbell, PlusCircle, Home } from "lucide-react"
 import Link from "next/link"
@@ -39,13 +39,31 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {navItems.map((item) => {
-                const isActive = pathname === item.url
-                
+                const isActive = (() => {
+                  if (item.url === "/dashboard") {
+                    return pathname === "/dashboard"
+                  }
+
+                  if (item.url === "/dashboard/workouts/new") {
+                    return pathname === "/dashboard/workouts/new"
+                  }
+
+                  if (item.url === "/dashboard/workouts") {
+                    return (
+                      pathname.startsWith("/dashboard/workouts") &&
+                      pathname !== "/dashboard/workouts/new"
+                    )
+                  }
+
+                  return false
+                })()
+
+
                 return (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton 
-                      asChild 
-                      isActive={isActive} 
+                    <SidebarMenuButton
+                      asChild
+                      isActive={isActive}
                       tooltip={item.title}
                     >
                       <Link href={item.url}>

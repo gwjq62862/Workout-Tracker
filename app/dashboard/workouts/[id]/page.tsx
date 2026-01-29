@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { ChevronLeft, Dumbbell, Hash, Repeat, Weight, Trophy, Calendar } from "lucide-react";
 import { Exercise } from "../new/page";
-import { dateFormatter } from "@/lib/utils";
+import { dateFormatter, volumeFormatter } from "@/lib/utils";
 type PageProps = {
   params: Promise<{ id: string }>;
 };
@@ -50,7 +50,7 @@ export default async function WorkoutDetailPage({ params }:  PageProps) {
         </div>
         <div className="flex gap-2">
           <Button variant="outline" asChild>
-            <Link href={`/dashboard/workouts/${workout.id}/edit`}>Edit Session</Link>
+            <Link href={`/dashboard/workouts/edit/${workout.id}`}>Edit Session</Link>
           </Button>
         </div>
       </div>
@@ -60,7 +60,7 @@ export default async function WorkoutDetailPage({ params }:  PageProps) {
         <Card className="bg-primary/5 border-primary/10">
           <CardContent className="p-4 flex flex-col items-center justify-center text-center">
             <Weight className="size-5 text-primary mb-1" />
-            <span className="text-2xl font-bold">{totalVolume.toLocaleString()}kg</span>
+            <span className="text-2xl font-bold"> {volumeFormatter.format(totalVolume)}kg</span>
             <span className="text-[10px] uppercase text-muted-foreground font-semibold">Total Volume</span>
           </CardContent>
         </Card>
@@ -89,7 +89,7 @@ export default async function WorkoutDetailPage({ params }:  PageProps) {
 
       <Separator />
 
-      {/* 🔵 Exercise List */}
+    
       <div className="space-y-4">
         <h2 className="text-xl font-bold flex items-center gap-2">
           <Dumbbell className="size-5 text-primary" /> Workout Breakdown
