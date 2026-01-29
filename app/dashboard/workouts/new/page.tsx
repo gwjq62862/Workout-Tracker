@@ -11,7 +11,7 @@ import { createWorkoutAction } from "@/lib/action/workout";
 import { WorkoutState } from "@/lib/type/workoutType";
 import { useRouter } from "next/navigation";
 
-type Exercise = {
+export type Exercise = {
   name: string;
   sets: string;
   reps: string;
