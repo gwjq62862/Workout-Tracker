@@ -11,8 +11,6 @@ import { AuthCard } from "@/components/auth/authCard"
 
 import { useActionState, useState } from "react"
 import { AuthState } from "@/lib/type/authType"
-import Image from "next/image"
-import { Skeleton } from "@/components/ui/skeleton"
 import { signup } from "@/lib/action/auth"
 
 
@@ -80,27 +78,7 @@ export function RegisterForm() {
         </p>
       </form>
 
-      {/* RIGHT — IMAGE */}
-      <div className="hidden md:block relative min-h-[420px]">
-        <>
-          <Skeleton className="absolute inset-0 h-full w-full" />
-          <Image
-            src="/login-photo.jpg"
-            alt="Workout tracking"
-            fill
-            priority
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover transition-opacity duration-500 opacity-0 dark:brightness-[0.2] dark:grayscale"
-            onLoadingComplete={(img) => {
-              img.style.opacity = "1"
-            }}
-            onError={(e) => {
-              const el = (e.target as HTMLImageElement).parentElement
-              if (el) el.classList.add("bg-muted")
-            }}
-          />
-        </>
-      </div>
+      
 
     </AuthCard>
   )
