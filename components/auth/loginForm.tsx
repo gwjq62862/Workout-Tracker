@@ -79,7 +79,7 @@ export function LoginForm() {
         <img
           src="/login-photo.jpg"
           alt="Workout tracking"
-          className="h-full w-full object-cover dark:brightness-[0.2]"
+          className="h-full w-full object-cover "
         />
       </div>
 
