@@ -14,6 +14,8 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/provider/auth-provider";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
+import { ModeToggle } from "@/components/theme-toggle";
+
 
 
 const navLinks = [
@@ -55,19 +57,20 @@ export default function Navbar() {
                 </div>
 
 
-                <nav className="hidden md:flex items-center gap-8">
+                <nav className="hidden md:flex items-center  gap-8">
                     {navLinks.map((link) => (
                         <Link
                             key={link.title}
                             href={link.href}
-                            className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                            className="text-sm  font-medium text-muted-foreground transition-colors hover:text-primary"
                         >
-                            {link.title}
+                          {link.title}
                         </Link>
                     ))}
                 </nav>
 
                 <div className="hidden items-center gap-3 md:flex">
+                    <ModeToggle />
                     {user ? (
                         <>
                             <Button size="sm" asChild variant="default">
@@ -110,11 +113,14 @@ export default function Navbar() {
                                     <Link
                                         key={link.title}
                                         href={link.href}
-                                        className="text-lg font-medium transition-colors hover:text-primary"
+                                        className="text-lg text-center font-medium transition-colors hover:text-primary"
                                     >
                                         {link.title}
                                     </Link>
                                 ))}
+                                <div className="flex justify-center">
+                                  <ModeToggle />
+                                </div>
                                 <hr className="my-2" />
                                 {user ? (
                                     <Button className="w-full" asChild>
@@ -130,6 +136,7 @@ export default function Navbar() {
                                         </Button>
                                     </>
                                 )}
+                              
                             </div>
                         </SheetContent>
                     </Sheet>
