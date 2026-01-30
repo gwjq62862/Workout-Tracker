@@ -11,6 +11,8 @@ import { AuthCard } from "@/components/auth/authCard"
 import { AuthState } from "@/lib/type/authType"
 import { useActionState } from "react"
 import { login } from "@/lib/action/auth"
+import Image from "next/image"
+import { Skeleton } from "@/components/ui/skeleton"
 
 
 
@@ -75,12 +77,27 @@ export function LoginForm() {
       </form>
 
       {/* RIGHT — IMAGE */}
-      <div className="hidden md:block">
-        <img
-          src="/login-photo.jpg"
-          alt="Workout tracking"
-          className="h-full w-full object-cover "
-        />
+      <div className="hidden md:block relative min-h-[420px]">
+        {!isPending && (
+          <>
+            <Skeleton className="absolute inset-0 h-full w-full" />
+            <Image
+              src="/login-photo.jpg"
+              alt="Workout tracking"
+              fill
+              priority
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover transition-opacity duration-500 opacity-0 data-[loaded=true]:opacity-100"
+              onLoadingComplete={(img) => {
+                img.setAttribute("data-loaded", "true")
+              }}
+              onError={(e) => {
+                const el = (e.target as HTMLImageElement).parentElement
+                if (el) el.classList.add("bg-muted")
+              }}
+            />
+          </>
+        )}
       </div>
 
     </AuthCard>
