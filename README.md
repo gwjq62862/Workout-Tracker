@@ -161,16 +161,4 @@ npm run lint
 - Dates are rendered with utilities to avoid timezone drift and formatted consistently.
 - UI uses small, composable components; prefer consistent naming and lowercase routes.
 
-## Deployment
-- Recommended: Vercel + Supabase.
-- Set environment variables in your hosting provider.
-- Ensure Supabase policies are in place before going live.
 
-## Roadmap Ideas
-- Workout history charts and progress analytics
-- Template workouts and quick-add flows
-- Mobile-focused refinements
-- Unit tests for actions and utilities
-
-## License
-MIT
