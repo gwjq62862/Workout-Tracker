@@ -104,6 +104,11 @@ export default function WorkoutList({ workouts }: { workouts: Workout[] }) {
                     <Eye className="size-4" />
                   </Link>
                 </Button>
+                <Button variant="outline" size="sm" className="flex sm:hidden" asChild>
+                  <Link href={`/dashboard/workouts/${workout.id}`}>
+                    View
+                  </Link>
+                </Button>
 
                 {/* Dropdown Menu */}
                 <DropdownMenu>
