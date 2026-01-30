@@ -81,7 +81,7 @@ export function RegisterForm() {
         <img
           src="/login-photo.jpg"
           alt="Workout tracking"
-          className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+          className="h-full w-full object-cover dark:brightness-[0.2] "
         />
       </div>
 

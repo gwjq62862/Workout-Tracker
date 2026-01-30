@@ -69,7 +69,7 @@ export function LoginForm() {
         <p className="text-center text-sm text-muted-foreground">
           Already have an account?{" "}
           <Link href="/signUp" className="underline underline-offset-4">
-            Login
+            Sign up
           </Link>
         </p>
       </form>
@@ -79,7 +79,7 @@ export function LoginForm() {
         <img
           src="/login-photo.jpg"
           alt="Workout tracking"
-          className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+          className="h-full w-full object-cover dark:brightness-[0.2]"
         />
       </div>
 
