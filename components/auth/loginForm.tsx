@@ -20,7 +20,6 @@ export function LoginForm() {
   return (
     <AuthCard>
 
-      {/* LEFT — FORM */}
       <form action={formAction}  className="flex flex-col justify-center gap-6 p-6 md:p-10">
         <div className="text-center space-y-2">
           <h1 className="text-2xl font-bold tracking-tight">
@@ -67,14 +66,26 @@ export function LoginForm() {
         </FieldGroup>
 
         <p className="text-center text-sm text-muted-foreground">
-          Already have an account?{" "}
+          Don't have an account?{" "}
           <Link href="/signUp" className="underline underline-offset-4">
             Sign up
           </Link>
         </p>
       </form>
 
-      
+      <div className="hidden md:block p-10 bg-muted">
+        <div className="space-y-3 max-w-sm">
+          <h2 className="text-2xl font-bold tracking-tight">Why LIFTMETRIC?</h2>
+          <p className="text-muted-foreground">
+            Track every workout, review your history, and stay consistent.
+          </p>
+          <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
+            <li>Log sets, reps, and weights quickly</li>
+            <li>See progress with clear session details</li>
+            <li>Edit previous workouts anytime</li>
+          </ul>
+        </div>
+      </div>
 
     </AuthCard>
   )

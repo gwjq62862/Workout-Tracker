@@ -19,7 +19,6 @@ export function RegisterForm() {
   return (
     <AuthCard>
 
-      {/* LEFT — FORM */}
       <form action={formAction} className="flex flex-col justify-center gap-6 p-6 md:p-10">
         <div className="text-center space-y-2">
           <h1 className="text-2xl font-bold tracking-tight">
@@ -78,7 +77,19 @@ export function RegisterForm() {
         </p>
       </form>
 
-      
+      <div className="hidden md:block p-10 bg-muted">
+        <div className="space-y-3 max-w-sm">
+          <h2 className="text-2xl font-bold tracking-tight">Get Started</h2>
+          <p className="text-muted-foreground">
+            Create an account and start logging your workouts in seconds.
+          </p>
+          <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
+            <li>Simple, fast workout logging</li>
+            <li>Clean history with details</li>
+            <li>Easy editing of past sessions</li>
+          </ul>
+        </div>
+      </div>
 
     </AuthCard>
   )
